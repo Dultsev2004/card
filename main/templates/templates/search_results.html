@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form class="form form-search" method="get" action="{% url 'main:search' %}">
+        <input type="search" placeholder="Поиск" name="query">
+        <button type="submit">Поиск</button>
+    </form>
+    {% if results %}
+        <div class="cards">
+            {% for service in results %}
+                <div class="card">
+                    <h2 class="card-title">{{ service.title }}</h2>
+                    <img class="card-img" src="{% if service.image %}{{ service.image.url }}{% endif %}" alt="Изображение">
+                    <p class="card-description">{{ service.description }}</p>
+                    <a class="btn" href="{% url 'main:service-detail' pk=service.pk %}">Подробнее</a>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <h2 class="card-title">Нет результатов для отображения</h2>
+    {% endif %}
+{% endblock %}

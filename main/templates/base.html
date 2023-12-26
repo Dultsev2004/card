@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}<title>Сайт Визитка</title>{% endblock %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+</head>
+<body>
+    {% block header %}
+        <header class="header">
+            <nav class="nav">
+                <div class="nav-list">
+                    <a class="nav-item" href="{% url 'main:index' %}">Главная</a>
+                    <a class="nav-item" href="{% url 'main:service' %}">Услуги/Товары</a>
+                    {% if user.is_authenticated %}
+                        <a class="nav-item" href="{% url 'main:profile' %}">Профиль</a>
+                    {% endif %}
+                    {% if user.is_authenticated and user.is_staff %}
+                        <a class="nav-item" href="{% url 'main:create_service' %}">Добавить Услугу/Товар</a>
+                    {% endif %}
+                </div>
+                <div class="nav-list">
+                    {% if user.is_authenticated %}
+                        <form method="post" action="{% url 'main:logged_out' %}">
+                            {% csrf_token %}
+                            <button class="nav-item" type="submit">Выйти</button>
+                        </form>
+                        {% else %}
+                            <a class="nav-item" href="{% url 'main:login' %}">Авторизация</a>
+                            <a class="nav-item" href="{% url 'main:registration' %}">Регистрация</a>
+                    {% endif %}
+                </div>
+            </nav>
+        </header>
+    {% endblock %}
+    <main class="main">
+        {% block content %}
+        <form class="form-search" method="get">
+            {{ form }}
+            <button type="submit">Поиск</button>
+        {% endblock %}
+    </main>
+</body>
+</html>

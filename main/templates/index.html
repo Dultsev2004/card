@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <section class="page-content">
+        <h2 class="page-title">Главная</h2>
+      <form class="form form-search" method="get" action="{% url 'main:search' %}">
+        <input type="search" placeholder="Поиск" name="query">
+        <button type="submit">Поиск</button>
+      </form>
+        <div class="about">
+            <div class="about_title">О нас</div>
+            <div class="about__descr">Компания, предлогает различные услуги и товары по выгодным ценам.</div>
+        </div>
+        <div class="cards">
+            {% for service in services_list %}
+                <div class="card">
+                    <h2 class="card-title">{{ service.title }}</h2>
+                    <img class="card-img" src="{% if service.image %}{{ service.image.url }}{% endif %}" alt="Изображение">
+                    <p class="card-description">{{ service.description }}</p>
+                    <a class="btn" href="{% url 'main:service-detail' pk=service.pk %}">Подробнее</a>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

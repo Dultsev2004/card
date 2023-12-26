@@ -1,0 +1,270 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #fcfcfc;
+    font-family: 'Rubik';
+}
+
+input, select, button, textarea{
+    border: none;
+    outline: none;
+}
+
+button{
+    background: none;
+}
+
+form{
+    position: relative;
+    display: inline-block;
+}
+
+.form-search{
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+input[type="file"]{
+    font-size: 16px;
+    outline: none;
+    padding: 0;
+    border-radius: 0;
+}
+
+input{
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 3px solid rgba(217, 225, 244, 0.30);
+}
+
+a{
+    text-decoration: none;
+}
+
+.btn{
+    text-align: center;
+    border-radius: 10px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    background: #7F85BC;
+    cursor: pointer;
+    display: block;
+}
+
+.header{
+    background: #F7F7FE;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.nav{
+    margin: 0 auto;
+    max-width: 1120px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-list{
+    display: flex;
+}
+
+.nav-item{
+    color: #7F85BC;
+    padding: 14px 30px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    background: none;
+}
+
+.nav-item:hover{
+    transition: all .3s;
+    background: rgba(217, 225, 244, 0.30);
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 1120px;
+    width: 100%;
+    padding: 40px 0;
+    gap: 20px;
+}
+
+.page-content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.page-title{
+    text-transform: uppercase;
+    color: #7F85BC;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 1120px;
+    width: 100%;
+}
+
+.form > input{
+    border: 3px solid rgba(217, 225, 244, 0.30);
+}
+
+.form > p{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form > p > label{
+    color: #7F85BC;
+    text-transform: uppercase;
+}
+
+.form > button{
+    border-radius: 10px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    background: #7F85BC;
+    cursor: pointer;
+    max-width: 200px;
+}
+
+.form-search{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.card-detale{
+    width: 100%;
+    border-radius: 10px;
+    border: 3px solid rgba(217, 225, 244, 0.30);
+    background: #F7F7FE;
+}
+
+.card-img__detale{
+    max-width: 300px;
+    max-height: 300px;
+    margin-left: 10px;
+    border-radius: 20px;
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.card{
+    max-width: 300px;
+    border-radius: 10px;
+    border: 3px solid rgba(217, 225, 244, 0.30);
+    background: #F7F7FE;
+}
+
+.card > .btn{
+    margin: 10px;
+}
+
+.card-title{
+    color: #7F85BC;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    padding: 10px;
+    max-width: 280px;
+    width: 100%;
+}
+
+.card-img{
+    display: block;
+    width: 100%;
+    max-height: 360px;
+}
+
+.card-description {
+    width: 100%;
+    max-width: 280px;
+    padding: 10px;
+    color: #7F85BC;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact__item {
+    color: #7F85BC;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.about{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    border: 3px solid rgba(217, 225, 244, 0.30);
+    background: #F7F7FE;
+    padding: 20px;
+}
+
+.about_title{
+    color: #7F85BC;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.about__descr {
+    color: #7F85BC;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.profile-block{
+    display: flex;
+    gap: 10px;
+}
+
+.profile-avatar {
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+    border: 3px solid rgba(217, 225, 244, 0.30);
+}
+
+.profile-username{
+    color: #7F85BC;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+}

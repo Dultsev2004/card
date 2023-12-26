@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <section class="page-content">
+        <div class="profile-block">
+            <img class="profile-avatar" src="{ request.user.avatar.url  }" alt="Аватар"/>
+            <h2 class="profile-username">{{ user.username }}</h2>
+        </div>
+        <h2 class="page-title">Мои заказы</h2>
+        <div class="cards">
+            {% for service in results %}
+                <div class="card">
+                    <h2 class="card-title">{{ service.title }}</h2>
+                    <img class="card-img" src="{% if service.image %}{{ service.image.url }}{% endif %}" alt="Изображение">
+                    <p class="card-description">{{ service.description }}</p>
+                    <a class="btn" href="{% url 'main:service-detail' pk=service.pk %}">Подробнее</a>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
